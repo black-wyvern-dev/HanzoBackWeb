@@ -9,7 +9,6 @@ Backend &amp; Admin Website for HanzoApp (laravel)
   [![Coverage Status][coveralls-badge]][coveralls]
   [![StyleCI status][styleci-badge]][style-ci]
   [![Docs][doxygen-badge]][doxygen-url]
-  [![Made in][russia-badge]][russia-country]
 
 Custom survey app in Laravel 6.
 
