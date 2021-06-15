@@ -36,7 +36,9 @@ class AuthenticationController extends Controller
             'firstName' => $request->firstName,
             'lastName' => $request->lastName,
             'email' => $request->email,
-            'password' => bcrypt($request->password)
+            'password' => bcrypt($request->password),
+            'active' => 0,
+            'role' => 2,
         ]);
         $token = $user->createToken('TutsForWeb')->accessToken;
         return response()->json(['token' => $token], 200);

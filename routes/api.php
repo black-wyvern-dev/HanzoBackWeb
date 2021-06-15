@@ -14,9 +14,11 @@ use Illuminate\Http\Request;
 */
 
 Route::post('login', 'Api\AuthenticationController@login');
+Route::post('register', 'Api\AuthenticationController@register');
 Route::post('/logo_request', 'Api\PollController@logo');
 
-Route::middleware('auth:api')->group(function() {
+//Route::middleware('auth:api')->group(function() {
     Route::post('/polls', 'Api\PollController@polls');
     Route::post('/resend', 'Api\PollController@resend');
-});
+    Route::post('/getmusiclist', 'Api\MusicController@getMusicList');
+//});

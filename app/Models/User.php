@@ -38,11 +38,12 @@ class User extends Authenticatable
      */
     // public function save(array $options = [])
     // {   
-    //     $this->photo = "default_avatar.png";
-    //     $this->branch = 0;
-    //     $this->role = 0;
-    //     $this->parent_id = 0;
-    //     $this->employeeId = Uuid::generate(4);
+        // $this->photo = "default_avatar.png";
+        // $this->branch = 0;
+        // $this->role = 0;
+        // $this->parent_id = 0;
+        // $this->employeeId = Uuid::generate(4);
+    //     $this->active = 0;
     //     return parent::save($options);
     // }
     public function getBranch() {
