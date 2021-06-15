@@ -18,7 +18,7 @@ class CreateShillsTable extends Migration
 
             $table->increments('id')->unsigned();
             $table->string('name');
-            $table->string('hadle')->unique();
+            $table->string('handle')->unique();
             $table->string('content');
             $table->string('image');
             $table->string('avatar');
