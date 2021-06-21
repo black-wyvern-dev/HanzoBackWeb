@@ -16,8 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('login', 'App\Http\Controllers\Api\AuthenticationController@login');
 Route::post('register', 'Api\AuthenticationController@register');
-Route::post('/logo_request', 'Api\PollController@logo');
 
-// Route::middleware('auth:api')->get('/user', function (Request $request) {
-//     return $request->user();
-// });
+Route::middleware('auth:api')->group(function() {
+    Route::post('postshill', 'App\Http\Controllers\Api\ShillController@PostShill');
+});
