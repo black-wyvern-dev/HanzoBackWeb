@@ -72,4 +72,8 @@ class HomeController extends Controller
             return redirect()->back()->with('error','Something goes wrong while sending notification.');
         }
     }
+
+    public function getResources(Request $request) {
+        
+    }
 }
