@@ -19,5 +19,5 @@ Route::post('register', 'Api\AuthenticationController@register');
 
 Route::middleware('auth:api')->group(function() {
     Route::post('postshill', 'App\Http\Controllers\Api\ShillController@PostShill');
-    Route::post('fileUpload', 'App\Http\Controllers\Api\ResourceController@fileUpload');
+    Route::post('fileupload', 'App\Http\Controllers\Api\ResourceController@fileUpload');
 });
