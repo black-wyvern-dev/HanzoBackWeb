@@ -18,14 +18,14 @@ class ResourceController extends Controller
      * @return \Illuminate\Http\Response
      */
    
-     public function fileUpload(Request $request) {
-         $file = $request->file('chatres');
-         if($file)
-         {
-             $filename = $file->getClientOriginalName();
-             $path = $file->storeAs("/public/ChatResoruces", $filename);
-             return response('/storage/ChatResoruces/'.$filename);
-         }
-         return response('failed');
-     }
+    public function fileUpload(Request $request) {
+        $file = $request->file('chatres');
+        if($file)
+        {
+            $filename = $file->getClientOriginalName();
+            $path = $file->storeAs("/public/ChatResoruces", $filename);
+            return response('storage/ChatResoruces/'.$filename);
+        }
+        return response('failed');
+    }
 }

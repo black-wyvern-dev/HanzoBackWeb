@@ -67,4 +67,49 @@ class AuthenticationController extends Controller
         $token->revoke();
         return response()->json(['message' => 'You have been successfully logged out!'], 200);
     }
+
+    public function changeProfile(Request $request) {
+        $user = Auth::user();
+        if($user) {
+            $user->first_name = $request['firstName'];
+            $user->last_name = $request['lastName'];
+            $user->email = $request['email'];
+            if($request['avatar'] != "")
+                $user->avatar = $request['avatar'];
+            $user->save();
+            return response()->json(
+                $user
+            , 200);
+        }
+        else {
+            return response()->json(['error' => 'No User Found'], 401);
+        }
+        
+    }
+
+    public function avatarUpload(Request $request) {
+        $file = $request->file('avatar');
+        if($file)
+        {
+            $filename = $file->getClientOriginalName();
+            $path = $file->storeAs("/public/Avatar", $filename);
+            return response('http://192.168.104.59:8000/storage/Avatar/'.$filename);
+        }
+        return response('failed');
+    }
+
+    public function changePassword(Request $request) {
+        $user = Auth::user();
+        if($user) {
+            $user->password = bcrypt($request['newPassword']);
+            $user->save();
+            return response()->json(
+                $user
+            , 200);
+        }
+        else {
+            return response()->json(['error' => 'No User Found'], 401);
+        }
+        
+    }
 }
