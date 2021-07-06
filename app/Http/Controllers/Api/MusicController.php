@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Storage;
 use Auth;
 
 use App\Models\User;
+use App\Models\Music;
 
 class MusicController extends Controller
 {
@@ -18,7 +19,8 @@ class MusicController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function getMusicController(Request $request) {
-        
+    public function getMusicList(Request $request) {
+        $musics = Music::all();
+        return response()->json(['success' => $musics], 200);
     }
 }
